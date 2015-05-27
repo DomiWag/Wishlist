@@ -1,18 +1,27 @@
-p#notice = notice
-
-p
-  strong Title:
-  = @gift.title
-p
-  strong Url:
-  = @gift.url
-p
-  strong Image:
-  = @gift.image
-p
-  strong Description:
-  = @gift.description
-
-= link_to 'Edit', edit_gift_path(@gift)
-'|
-= link_to 'Back', gifts_path
+.row
+  .col-md-12
+    h1
+      = @gift.title
+.row
+  div class="col-xs-12 col-sm-#{if @gift.image then 12 else 8}"
+    p
+      - if @gift.url
+        | This gift has been associated with a website.
+        =<> link_to @gift.url, target: '_blank' do
+          span> class="glyphicon glyphicon-link"
+          | View website
+      -# p This gift has been submitted by #{@gift.user.email}.
+    h2 Description
+    p
+      - if @gift.description
+        = @gift.description
+      - else
+        | There is no description for this gift, so be creative!
+  - if @gift.image
+    div class='col-xs-12 col-sm-4'
+      img src="#{@gift.image}" class='img-responsive img-thumbnail'
+.row
+  .col-md-6
+    = link_to gifts_path, class: 'btn btn-default' do
+      span class='glyphicon glyphicon-chevron-left'
+      | &nbsp;Back to List of gifts

@@ -1,27 +1,34 @@
-h1 Listing gifts
+h1 List of gifts
 
-table
+p This list only displays gifts that have not been selected yet.
+table.table
   thead
     tr
       th Title
-      th Url
-      th Image
       th Description
-      th
-      th
-      th
-
+      th Actions
+      th Admin
   tbody
-    - @gifts.each do |gift|
-      tr
-        td = gift.title
-        td = gift.url
-        td = gift.image
-        td = gift.description
-        td = link_to 'Show', gift
-        td = link_to 'Edit', edit_gift_path(gift)
-        td = link_to 'Destroy', gift, data: {:confirm => 'Are you sure?'}, :method => :delete
+  - @gifts.each do |gift|
+    tr
+      td
+        = link_to h(gift.title), gift
+      td
+        - if gift.description
+          = h(shorten(gift.description))
+        - else
+          | There is no description for this gift, so be creative!
+      td
+        .btn-group
+          = link_to gift, class: 'btn btn-default btn-xs' do
+            span class='glyphicon glyphicon-share'
+            | &nbsp;Details
+          = link_to ('http://google.de'), class: 'btn btn-default btn-xs' do
+            span class='glyphicon glyphicon-check'
+            | &nbsp;Select gift
+      td
+        .btn-group
+          = link_to 'Edit', edit_gift_path(gift), class: 'btn btn-default btn-xs'
+          = link_to 'Delete', gift, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default btn-xs'
 
-br
-
-= link_to 'New Gift', new_gift_path
+= link_to 'New Gift', new_gift_path, class: 'btn btn-default'

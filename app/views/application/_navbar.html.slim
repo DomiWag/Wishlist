@@ -7,13 +7,13 @@ nav class='navbar navbar-default'
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand href='#' Wishlist
+      = link_to 'Wishlist', root_path, class: 'navbar-brand'
 
     /! Collect the nav links, forms, and other content for toggling
     div#bs-example-navbar-collapse-1 class='collapse navbar-collapse'
       ul class='nav navbar-nav'
         li
-          = link_to 'List gifts', gifts_path
+          = link_to 'List of gifts', gifts_path
         li
           = link_to 'Add gift', new_gift_path
       ul class='nav navbar-nav navbar-right'
