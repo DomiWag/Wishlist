@@ -55,3 +55,6 @@ gem 'autoprefixer-rails'
 
 # Devise framework
 gem 'devise'
+
+# SimpleCov
+gem 'simplecov'
