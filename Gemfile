@@ -52,3 +52,6 @@ gem 'slim-rails'
 # Bootstrap CSS Framework
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+
+# Devise framework
+gem 'devise'

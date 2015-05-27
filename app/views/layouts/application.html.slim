@@ -16,5 +16,9 @@ html
 
     = csrf_meta_tags
   body
+    - if notice
+      .bg-info =notice
+    - if alert
+      .bg-danger =alert
     .container
       = yield
