@@ -16,6 +16,7 @@ html
 
     = csrf_meta_tags
   body
+    = render 'navbar'
     - if notice
       .bg-info =notice
     - if alert
