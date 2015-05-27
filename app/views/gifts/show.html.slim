@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @gift.title
+p
+  strong Url:
+  = @gift.url
+p
+  strong Image:
+  = @gift.image
+p
+  strong Description:
+  = @gift.description
+
+= link_to 'Edit', edit_gift_path(@gift)
+'|
+= link_to 'Back', gifts_path
