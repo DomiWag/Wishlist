@@ -3,6 +3,7 @@ require 'test_helper'
 class GiftsControllerTest < ActionController::TestCase
   setup do
     @gift = gifts(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
