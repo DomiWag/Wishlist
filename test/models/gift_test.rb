@@ -10,4 +10,8 @@ class GiftTest < ActiveSupport::TestCase
       Gift.create! description: 'test'
     end
   end
+
+  test "only title is required" do
+    assert Gift.create! title: 'test'
+  end
 end
