@@ -18,9 +18,12 @@ ActiveRecord::Schema.define(version: 20150527130427) do
     t.string   "url"
     t.string   "image"
     t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "gifts", ["user_id"], name: "index_gifts_on_user_id"
 
   create_table "gifts_tags", id: false, force: :cascade do |t|
     t.integer "gift_id", null: false
