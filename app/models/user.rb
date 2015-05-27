@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :gifts, inverse_of: :user, dependent: :destroy
+
+  validates_presence_of :name
 end

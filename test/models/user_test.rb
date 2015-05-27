@@ -10,4 +10,14 @@ class UserTest < ActiveSupport::TestCase
       User.create! email: users(:one).email
     end
   end
+
+  test "name is required" do
+    assert_raise ActiveRecord::RecordInvalid do
+      User.create! email: 'user@example.com'
+    end
+  end
+
+  test "allow duplicate names" do
+    assert User.create! name: users(:one).name, email: 'three@example.com', password: 'test1234'
+  end
 end

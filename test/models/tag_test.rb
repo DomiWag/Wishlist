@@ -5,7 +5,7 @@ class TagTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test "tag name must be unique" do
+  test "name must be unique" do
     assert_raise ActiveRecord::RecordInvalid do
       Tag.create! name: tags(:one).name
     end
