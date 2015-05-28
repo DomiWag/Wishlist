@@ -1,0 +1,18 @@
+h1
+  =< @tag.name
+
+table.table
+  thead
+    th Title
+    th Description
+    th
+  tbody
+    - @gifts.each do |gift|
+      td
+        = gift.title
+      td
+        = shorten(gift.description)
+      td
+        = link_to 'Details', gift
+
+= link_to 'Back', tags_path, class: 'btn btn-default'

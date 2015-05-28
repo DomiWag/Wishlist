@@ -1,0 +1,16 @@
+h1 All Tags
+
+table.table
+  thead
+    tr
+      th Tag name
+      th
+
+  tbody
+    - @tags.each do |tag|
+      tr
+        td
+          => raw tag_link(tag)
+          | (#{tag.gifts.count})
+        td
+          = link_to 'Show', tag

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #get 'tags' => 'tags#index'
+  #get 'tags/:name' => 'tags#show'
+  resources :tags, only: [:show, :index]
   resources :gifts
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

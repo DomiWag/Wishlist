@@ -5,7 +5,7 @@
 .row
   div class="col-xs-12 col-sm-#{if @gift.image then 12 else 8}"
     p
-      = @gift.all_tags
+      = raw tag_links(@gift.tags)
     p
       - if @gift.url
         | This gift has been associated with a website.

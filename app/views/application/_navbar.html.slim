@@ -15,6 +15,8 @@ nav class='navbar navbar-default'
         li
           = link_to 'List of gifts', gifts_path
         li
+          = link_to 'List of tags', tags_path
+        li
           = link_to 'Add gift', new_gift_path
       ul class='nav navbar-nav navbar-right'
         - if user_signed_in?
