@@ -17,6 +17,26 @@ users = User.create(
     ]
 )
 
+tags = Tag.create(
+    [
+        {
+            name: 'application'
+        },
+        {
+            name: 'expensive'
+        },
+        {
+            name: 'software'
+        },
+        {
+            name: 'cheap'
+        },
+        {
+            name: 'hardware'
+        }
+    ]
+)
+
 gifts = Gift.create(
     [
         {
@@ -25,21 +45,26 @@ gifts = Gift.create(
 
 An executive summary is provided for the non-technical user.',
             url: 'https://www.hex-rays.com/products/ida/index.shtml',
-            image: 'https://www.hex-rays.com/products/ida/pix/pc1.gif'
+            image: 'https://www.hex-rays.com/products/ida/pix/pc1.gif',
+            all_tags: 'application,expensive,software'
         },
         {
             title: 'Cerbero Profiler',
             description: 'Cerbero Profiler is a tool designed primarily for malware and forensic analysis. It supports a huge number of file formats (listed below) on which it performs analysis and lets the user inspect their internal layout. Profiler is often used to identify 0-day threats and personal information inside of files. However, given the scale of the project, it has many other uses and we encourage you to visit our blog in order to see Profiler in action.',
             url: 'http://cerbero.io/profiler/',
             image: 'http://cerbero.io/static/images/profiler/header.png',
-            user: User.find_by_email('user@example.com')
+            user: User.find_by_email('user@example.com'),
+            all_tags: 'application,cheap,software'
         },
         {
-            title: 'Brotschneidemaschine',
+            title: 'Bread cutter',
+            all_tags: 'expensive,hardware'
         },
         {
-            title: 'Spielesammlung',
-            description: 'Eine Spielesammlung mit Mühle, Schach, etc',
+            title: 'Game collection',
+            description: 'A collection of games including Nine Men\'s Morris, chess, etc',
+            all_tags: 'cheap,hardware'
         }
     ]
 )
+
