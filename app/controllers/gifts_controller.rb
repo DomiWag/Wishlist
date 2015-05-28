@@ -69,6 +69,6 @@ class GiftsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gift_params
-      params.require(:gift).permit(:title, :url, :image, :description)
+      params.require(:gift).permit(:title, :url, :image, :description, :all_tags)
     end
 end
