@@ -14,10 +14,7 @@ table.table
       td
         = link_to h(gift.title), gift
       td
-        - if gift.description
-          = h(shorten(gift.description))
-        - else
-          | There is no description for this gift, so be creative!
+        = h(shorten(gift.description))
       td
         .btn-group
           = link_to gift, class: 'btn btn-default btn-xs' do
