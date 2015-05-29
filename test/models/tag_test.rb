@@ -10,4 +10,10 @@ class TagTest < ActiveSupport::TestCase
       Tag.create! name: tags(:one).name
     end
   end
+
+  test "gifts can be retrieved through tags" do
+    assert myGift = Gift.create!(title: 'MyGift', all_tags: 'my_tag_test')
+    assert myTag = Tag.find_by_name('my_tag_test')
+    assert_equal myTag.gifts.first, myGift
+  end
 end
