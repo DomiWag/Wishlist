@@ -5,6 +5,16 @@ class BaiscWorkflowTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
 
+  test "uses bootstrap" do
+    get_via_redirect '/'
+    assert_select 'div.container'
+  end
+
+  test "has navbar" do
+    get_via_redirect '/'
+    assert_select 'nav.navbar.navbar-default'
+  end
+
   test "signup" do
     get '/'
     assert redirect?
