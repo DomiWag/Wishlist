@@ -47,4 +47,18 @@ class GiftsControllerTest < ActionController::TestCase
 
     assert_redirected_to gifts_path
   end
+
+  # More tests
+
+  test "should display title" do
+    get :show, id: @gift
+    assert_select 'h1', @gift.title
+  end
+
+  test "should display tags" do
+    @gift.all_tags = 'tag1,tag2'
+    @gift.save!
+    get :show, id: @gift
+    assert_select 'span.glyphicon-tag', @gift.tags.count
+  end
 end
