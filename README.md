@@ -20,7 +20,7 @@ All models have at least one useful validation.
 ## Gems
 Front-End: Bootstrap
 
-Additional Gem: Devise
+Additional Gems: Devise
 
 
 # Installation

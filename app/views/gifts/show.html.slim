@@ -18,7 +18,7 @@
       - if @gift.description
         = @gift.description
       - else
-        = NO_DESCRIPTION_STRING
+        = 'There is no description for this gift, so be creative!'
   - if @gift.image
     div class='col-xs-12 col-sm-4'
       img src="#{@gift.image}" class='img-responsive img-thumbnail'

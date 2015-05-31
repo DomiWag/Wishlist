@@ -61,4 +61,24 @@ class GiftsControllerTest < ActionController::TestCase
     get :show, id: @gift
     assert_select 'span.glyphicon-tag', @gift.tags.count
   end
+
+  test "should display website if available" do
+    get :show, id: @gift
+    assert_select 'span.glyphicon-link'
+  end
+
+  test "should not display website if unavailable" do
+    get :show, id: gifts(:two)
+    assert_select 'span.glyphicon-link', 0
+  end
+
+  test "should display image if available" do
+    get :show, id: @gift
+    assert_select 'img'
+  end
+
+  test "should not display image if unavailable" do
+    get :show, id: gifts(:two)
+    assert_select 'img', 0
+  end
 end

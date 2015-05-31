@@ -16,4 +16,14 @@ class TagsControllerTest < ActionController::TestCase
     get :show, id: @tag
     assert_response :success
   end
+
+  # More tests
+
+  test "should display tagged gift" do
+    gift = gifts(:one)
+    gift.all_tags = tags(:one).name
+    gift.save!
+    get :show, id: @tag
+    assert_select 'td', @tag.gifts.first.title
+  end
 end
