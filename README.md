@@ -1,10 +1,6 @@
 # Wishlist
 A rails application for tracking your wishes
 
-## TODO
-- Add missing tests
-- Implement tagging functionality
-
 ## Models
 1. Gift: Represents a gift (title, url, image, description), belongs to a user and has many tags.
 2. User: Represents a user (email, password, etc) and has many gifts. Maintained by Devise.
